@@ -17,9 +17,7 @@ const { Content } = await render(post);
 // for prev/next posts
 
 // 1. Load all posts
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-);
+const posts = await getCollection('blog');
 
 // 2. Find current post
 const index = posts.findIndex((p) => p.id === id);
